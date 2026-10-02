@@ -1,0 +1,16 @@
+country,pollutant,records_after_quality_control
+Brazil,co,4000
+Brazil,no2,9000
+Brazil,o3,7000
+Brazil,pm10,7000
+Brazil,pm25,2000
+Argentina,co,4290
+Argentina,no2,5000
+Argentina,o3,2000
+Argentina,pm10,3000
+Argentina,pm25,1439
+Chile,co,4003
+Chile,no2,6000
+Chile,o3,5002
+Chile,pm10,3000
+Chile,pm25,2000

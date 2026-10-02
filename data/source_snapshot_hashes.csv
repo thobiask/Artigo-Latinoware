@@ -1,0 +1,4 @@
+country,source_file,sha256,raw_rows
+Brazil,brazil_raw.csv,9ac70442d71921675e0d389431e10ecc18afc2d26ce78442d1ccba057e95ce66,29000
+Argentina,argentina_raw.csv.gz,f1ffc5a9e6f4bf6e53a2af08b5fb11e845ba1e45627dd27d04c902208703000d,15730
+Chile,chile_raw.csv,0fbc1af28b97512d78d1cc1825286ca5ef4002c20b969d19a1d8332a6ddd9703,20006

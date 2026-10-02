@@ -1,0 +1,4 @@
+scenario,edge_ai_percent,hybrid_percent,cloud_percent
+Brazil / State-level consolidated network,0.8,12.1,87.0
+Argentina / Municipal intermediate network,6.5,72.9,20.6
+Chile / Remote stations in a federal network,54.3,40.6,5.1

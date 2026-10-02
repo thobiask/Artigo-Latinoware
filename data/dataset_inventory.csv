@@ -1,0 +1,4 @@
+country,full_raw_rows,pm25_rows,pm25_stations,pm25_file
+Brazil,29000,2000,2,data/pm25/brazil_pm25.csv.gz
+Argentina,15730,1439,4,data/pm25/argentina_pm25.csv.gz
+Chile,20006,2000,2,data/pm25/chile_pm25.csv.gz

@@ -1,4 +1,4 @@
-# FDTE TinyML — Latin.Science 2026 Reproducibility Repository
+# FDTE TinyML - Latin.Science 2026 Reproducibility Repository
 
 Reproducibility artifacts for the accepted Latin.Science 2026 paper:
 

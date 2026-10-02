@@ -1,0 +1,4 @@
+scenario,D1,D2,D3,D4,D5,total,recommendation
+Brazil / State-level consolidated network,2,0,2,2,2,8,Cloud
+Argentina / Municipal intermediate network,1,0,1,2,1,5,Hybrid
+Chile / Remote stations in a federal network,0,0,0,2,1,3,Edge AI

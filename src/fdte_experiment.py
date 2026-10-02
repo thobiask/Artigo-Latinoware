@@ -40,9 +40,9 @@ FEATURES = [
     "day_of_week",
 ]
 COUNTRY_FILES = {
-    "Brazil": "brazil_clean.csv",
-    "Argentina": "argentina_clean.csv",
-    "Chile": "chile_clean.csv",
+    "Brazil": "brazil_pm25.csv.gz",
+    "Argentina": "argentina_pm25.csv.gz",
+    "Chile": "chile_pm25.csv.gz",
 }
 COUNTRY_SLUG = {"Brazil": "brazil", "Argentina": "argentina", "Chile": "chile"}
 
@@ -51,6 +51,11 @@ def set_seeds() -> None:
     np.random.seed(SEED)
     random.seed(SEED)
     tf.random.set_seed(SEED)
+
+
+def load_country_snapshot(pm25_dir: Path, filename: str) -> pd.DataFrame:
+    """Load the exact PM2.5 input snapshot used by the predictive pipeline."""
+    return pd.read_csv(pm25_dir / filename)
 
 
 def pm25_rows(df: pd.DataFrame) -> pd.DataFrame:
@@ -270,7 +275,7 @@ def write_decision_and_sensitivity_results(result_dir: Path) -> None:
 def main() -> None:
     set_seeds()
     root = Path(__file__).resolve().parents[1]
-    data_dir = root / "data" / "processed"
+    pm25_dir = root / "data" / "pm25"
     model_dir = root / "models"
     result_dir = root / "results"
     model_dir.mkdir(exist_ok=True)
@@ -301,7 +306,7 @@ def main() -> None:
     }
 
     for country, filename in COUNTRY_FILES.items():
-        df = pd.read_csv(data_dir / filename)
+        df = load_country_snapshot(pm25_dir, filename)
         contextual_rows = contextual_summary(df)
         contextual.append(
             {

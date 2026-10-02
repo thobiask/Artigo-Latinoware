@@ -4,6 +4,10 @@
 
 The literature review is structured around four themes: environmental TinyML, multicriteria decision analysis for IoT, edge-cloud architectures, and public digital governance. It is not presented as a PRISMA systematic review.
 
+## Data input
+
+The executable pipeline reads the exact PM2.5 subsets in `data/pm25/`. The article's broader 64,734-record multi-pollutant inventory is documented in `data/dataset_inventory.csv`, `data/pollutant_inventory.csv`, `data/quality_exclusions.csv`, and `data/source_snapshot_hashes.csv`. The two excluded records concern CO and NO2 and therefore do not affect the final PM2.5 experiment.
+
 ## Contextual detection
 
 For each station, the contextual score uses only the previous 24 observations:
@@ -18,7 +22,7 @@ The target is positive when at least one of the next three hourly PM2.5 observat
 
 ## Temporal evaluation
 
-Each station is ordered chronologically and split into 70% training, 10% validation, and 20% testing. The scaler is fitted on training data only. The classification threshold is selected on validation data by maximizing F1; the test set is evaluated once.
+Each usable station is ordered chronologically and split into 70% training, 10% validation, and 20% testing. The scaler is fitted on training data only. The classification threshold is selected on validation data by maximizing F1; the test set is evaluated once.
 
 ## Network and quantization
 

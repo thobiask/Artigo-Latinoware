@@ -1,0 +1,54 @@
+{
+  "task": "Predict whether at least one of the next three hourly PM2.5 observations exceeds 25 \u00b5g/m\u00b3",
+  "architecture": "Dense(16, ReLU) -> Dense(8, ReLU) -> Dense(1, sigmoid)",
+  "training": {
+    "epochs": 50,
+    "optimizer": "Adam",
+    "loss": "binary_crossentropy",
+    "split": "chronological 70/10/20 by station",
+    "seed": 42
+  },
+  "quantization": "TensorFlow Lite full integer INT8",
+  "reported_metrics_note": "Reported classification metrics are computed on the held-out test split using the trained Keras model before TFLite conversion. The included INT8 files are the corresponding quantized exports; physical ESP32 validation remains future work.",
+  "models": {
+    "Brazil": {
+      "file": "brazil_pm25_prediction_3h.tflite",
+      "decision_threshold": 0.7799999999999999,
+      "test_metrics": {
+        "accuracy_percent": 92.92929292929293,
+        "precision_percent": 90.09009009009009,
+        "recall_percent": 85.47008547008546,
+        "f1_percent": 87.71929824561403,
+        "auc_roc": 0.9701007873050883,
+        "test_positive_percent": 29.545454025268555
+      },
+      "file_size_kb": 3.28125
+    },
+    "Argentina": {
+      "file": "argentina_pm25_prediction_3h.tflite",
+      "decision_threshold": 0.625,
+      "test_metrics": {
+        "accuracy_percent": 85.5072463768116,
+        "precision_percent": 15.0,
+        "recall_percent": 50.0,
+        "f1_percent": 23.076923076923077,
+        "auc_roc": 0.8033459595959596,
+        "test_positive_percent": 4.34782600402832
+      },
+      "file_size_kb": 3.28125
+    },
+    "Chile": {
+      "file": "chile_pm25_prediction_3h.tflite",
+      "decision_threshold": 0.6799999999999999,
+      "test_metrics": {
+        "accuracy_percent": 69.94949494949495,
+        "precision_percent": 75.86206896551724,
+        "recall_percent": 56.70103092783505,
+        "f1_percent": 64.89675516224189,
+        "auc_roc": 0.7554608553638871,
+        "test_positive_percent": 48.989898681640625
+      },
+      "file_size_kb": 3.28125
+    }
+  }
+}

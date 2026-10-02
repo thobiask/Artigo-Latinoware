@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use these artifacts, please cite the associated Latin.Science 2026 paper. Final proceedings metadata and DOI will be added after publication."
+title: "FDTE TinyML: Reproducibility Artifacts for Latin.Science 2026"
+type: software
+authors:
+  - family-names: "Karpinski"
+    given-names: "Thobias"
+version: "1.0-camera-ready"
+date-released: 2026-10-01
+license: MIT
+repository-code: "https://github.com/thobiask/Artigo-Latinoware"
